@@ -3,9 +3,11 @@ using System.Diagnostics.CodeAnalysis;
 #endif
 using System.Reflection;
 using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
+using JetBrains.Annotations;
 using Nice3point.Revit.Toolkit.Utils;
 
 namespace Nice3point.Revit.Toolkit;
@@ -115,11 +117,11 @@ public static class Context
     ///     The active or top most view will be the active project and hence the active document which is available from the Application object.<br/><br/>
     ///     Returns <see langword="null" /> if there are no active projects.
     /// </remarks>
-    public static Document? ActiveDocument => UiApplication.ActiveUIDocument?.Document;
+    public static Autodesk.Revit.DB.Document? ActiveDocument => UiApplication.ActiveUIDocument?.Document;
 
     /// <summary>Represents a currently active Autodesk Revit project at the database level.</summary>
     [Obsolete("Document property renamed and will be removed in the next Major version, use Context.ActiveDocument instead")]
-    public static Document? Document => ActiveDocument;
+    public static Autodesk.Revit.DB.Document? Document => ActiveDocument;
 
     /// <summary>Represents the currently active view of the currently active document.</summary>
     /// <remarks>

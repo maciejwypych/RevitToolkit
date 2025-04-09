@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
 using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using JetBrains.Annotations;
 using Nice3point.Revit.Toolkit.Helpers;
 #if NETCOREAPP
 using System.Runtime.Loader;
@@ -47,7 +49,7 @@ public abstract class ExternalCommand : IExternalCommand
     ///     Revit can have multiple projects open and multiple views to those projects.
     ///     The active or top most view will be the active project and hence the active document which is available from the Application object.<br/><br/>
     /// </remarks>
-    public Document Document => Context.ActiveDocument!;
+    public Autodesk.Revit.DB.Document Document => Context.ActiveDocument!;
 
     /// <summary>Represents the currently active view.</summary>
     public View ActiveView => Context.ActiveView!;

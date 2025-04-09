@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Reflection;
+using JetBrains.Annotations;
 #if NETCOREAPP
 using System.Runtime.Loader;
 #endif
@@ -104,6 +105,6 @@ public static class ResolveHelper
         var assemblyPath = Path.Combine(_moduleDirectory!, $"{assemblyName}.dll");
         if (!File.Exists(assemblyPath)) return null;
 
-        return Assembly.LoadFrom(assemblyPath);
+        return Assembly.LoadFile(assemblyPath);
     }
 }

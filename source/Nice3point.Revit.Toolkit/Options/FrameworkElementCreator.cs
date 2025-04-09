@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Autodesk.Revit.UI;
+using JetBrains.Annotations;
 #if (!NETCOREAPP)
 using Nice3point.Revit.Toolkit.Helpers;
 #endif
